@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movie/Screens/categories.dart';
-import 'package:movie/Screens/home.dart';
-import 'package:movie/Screens/search.dart';
-import 'package:movie/Screens/watch_list.dart';
+import 'package:movie/Screens/BottomNAVScreens/search.dart';
 import 'package:movie/const.dart';
+import 'BottomNAVScreens/categories.dart';
+import 'BottomNAVScreens/home.dart';
+import 'BottomNAVScreens/watch_list.dart';
 
 class BottomNavBaScreen extends StatefulWidget {
   const BottomNavBaScreen({super.key});
@@ -13,11 +13,11 @@ class BottomNavBaScreen extends StatefulWidget {
 }
 
 class _BottomNavBaScreenState extends State<BottomNavBaScreen> {
-  List<Widget> screensNav = const [
-    HomeScreen(),
-    SearchScreen(),
-    CategoriesScreen(),
-    WatchListScreen()
+  List<Widget> screensNav = [
+    const HomeScreen(),
+    const SearchScreen(),
+    const CategoriesScreen(),
+    const WatchListScreen()
   ];
   int index = 0;
 
@@ -25,8 +25,7 @@ class _BottomNavBaScreenState extends State<BottomNavBaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-            canvasColor: const Color(0xFF1A1A1A)),
+        data: Theme.of(context).copyWith(canvasColor: const Color(0xFF1A1A1A)),
         child: BottomNavigationBar(
             elevation: 5,
             showUnselectedLabels: true,
